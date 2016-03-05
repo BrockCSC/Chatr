@@ -6,7 +6,6 @@ Now with Slack integration
 # Proposed file structure
 
 ```
-routes // This will contain route files for the app.
 views // This will contain our react views.
 node_modules // installed packages for node. do not touch.
 package.json // for heroku and node dependency management.
