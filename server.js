@@ -1,5 +1,5 @@
 var express = require('express');
-var jsxEngine = require('express-react-views').createEngine();
+var jsxEngine = require('./engine.js').createEngine();
 
 var app = express();
 
