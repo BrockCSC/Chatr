@@ -5,7 +5,7 @@
   "main": "config.js",
   "scripts": {
     "test": "mocha -u tdd --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "start": "node server.js --exec babel-node --presets es2015 react"
+    "start": "babel-node server.js"
   },
   "repository": {
     "type": "git",
