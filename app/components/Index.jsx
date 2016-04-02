@@ -3,7 +3,8 @@ import  React, { Component } from 'react';
 import ChatList from './ChatList.jsx';
 import io from 'socket.io-client';
 
-const socket = io('https://cherry-crisp-34808.herokuapp.com/');
+const URL = process.env.URL || 'http://localhost:3000';
+const socket = io(URL);
 
 class Index extends Component {
 
