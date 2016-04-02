@@ -3,13 +3,14 @@ import  React, { Component } from 'react';
 import ChatList from './ChatList.jsx';
 import io from 'socket.io-client';
 
-const URL = process.env.URL || 'http://localhost:3000';
-const socket = io(URL);
+let socket;
 
 class Index extends Component {
 
   constructor(props) {
     super(props);
+    let url = props.location || 'http://localhost:3000';
+    socket = io(url);
     socket.on('connect', () => {
       console.log('connected on client');
     });
