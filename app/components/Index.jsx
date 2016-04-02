@@ -3,7 +3,7 @@ import  React, { Component } from 'react';
 import ChatList from './ChatList.jsx';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
+const socket = io();
 
 class Index extends Component {
 
