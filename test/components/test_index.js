@@ -1,5 +1,5 @@
 import { renderComponent, assert } from '../test_helper';
-import Index from '../../views/components/index.jsx';
+import Index from '../../app/components/Index.jsx';
 
 describe('Index', function () {
   let component;
