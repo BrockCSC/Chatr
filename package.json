@@ -4,8 +4,8 @@
   "description": "The first CSC Project Series project. A Chat program to teach the basics of networking",
   "main": "config.js",
   "scripts": {
-    "test": "mocha -u tdd --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "start": "babel-node server.js"
+    "test": "gulp && mocha -u tdd --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "start": "gulp && babel-node server.js"
   },
   "repository": {
     "type": "git",
