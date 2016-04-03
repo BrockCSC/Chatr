@@ -3,15 +3,13 @@ import  React, { Component } from 'react';
 import ChatList from './ChatList.jsx';
 import io from 'socket.io-client';
 
-let socket = io('https://cherry-crisp-34808.herokuapp.com/');
+let socket;
 
 class Index extends Component {
 
   constructor(props) {
     super(props);
-    socket.on('connect', () => {
-      console.log('connected on client');
-    });
+    socket = io.connect(props.url);
   }
 
   render() {

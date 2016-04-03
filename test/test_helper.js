@@ -6,9 +6,15 @@ import jsdom from 'jsdom';
 import chai, { expect, assert } from 'chai';
 import chaiJquery from 'chai-jquery';
 
-global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
-global.window = global.document.defaultView;
+const config = {
+  url: 'http://localhost:3000',
+};
 
+//global.document is equivalent to window.document in the browser, but for node.
+global.document = jsdom.jsdom('<!doctype html><html><body></body></html>', config);
+
+//similarly for window.
+global.window = global.document.defaultView;
 const $ = jquery(window);
 
 chaiJquery(chai, chai.util, $);

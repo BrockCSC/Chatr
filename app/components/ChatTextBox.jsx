@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import io from 'socket.io-client';
 
 class ChatTextBox extends Component {
 
@@ -23,9 +22,10 @@ class ChatTextBox extends Component {
     return (
       <div>
         <input type="text"
+        className = "textbox"
         value={this.state.term}
         onChange={this.termChange} />
-        <button onClick={this.handleClick}>Send Message</button>
+        <button className = "msgButton" onClick={this.handleClick}>Send Message</button>
         <div>{this.state.term}</div>
       </div>
     );
