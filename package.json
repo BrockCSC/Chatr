@@ -5,7 +5,8 @@
   "main": "config.js",
   "scripts": {
     "test": "gulp && mocha -u tdd --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "start": "gulp && babel-node server.js"
+    "prestart": "gulp",
+    "start": "babel-node server.js"
   },
   "repository": {
     "type": "git",
