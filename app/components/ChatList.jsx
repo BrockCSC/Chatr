@@ -9,17 +9,19 @@ class ChatList extends Component {
 
   componentDidMount() {
     this.props.socket.on('message:get', (message) => {
-      console.log('we got here');
       this.setState({ messages: [...this.state.messages, message] });
     });
   }
 
   render() {
+
+    let messageDivs = this.state.messages.map((message) => {
+      return (<div className = "message">{message}</div>);
+    });
+
     return (
       <div>
-        <ul className = "chat-list">
-          {this.state.messages}
-        </ul>
+          {messageDivs}
       </div>
     );
   }

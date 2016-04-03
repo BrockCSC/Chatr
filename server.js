@@ -1,17 +1,19 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const app = exports.app =  express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 //React
-var React = require('react');
-var ReactDOMServer = require('react-dom/server');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 
 //Component
-var Index = require('./app/components/Index.jsx').default;
+const Index = require('./app/components/Index.jsx').default;
 
-//Environment variables
+//Environment variables and paths
 const port = process.env.PORT || 3000;
+const url = process.env.URL || `http://localhost:${port}`;
+
 const viewsPath = `${__dirname}/views`;
 
 app.set('port', port);
@@ -21,16 +23,11 @@ app.set('view engine', 'jade');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  var reactHTML = ReactDOMServer.renderToString(<Index/>);
-  res.render('test', { reactHTML });
+  const reactHTML = ReactDOMServer.renderToString(<Index url = {url}/>);
+  res.render('index', { reactHTML });
 });
 
 io.on('connection', (socket) => {
-  console.log('server connected');
-
-  socket.on('disconnect', () => {
-    console.log('disconnected');
-  });
 
   socket.on('message:sent', (message) => {
     io.emit('message:get', message);
