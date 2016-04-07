@@ -1,4 +1,4 @@
-# Chatr
+# Chatr  [![Build Status](https://travis-ci.org/BrockCSC/Chatr.svg?branch=master)](https://travis-ci.org/BrockCSC/Chatr)
 The first CSC Project Series project. A Chat program to teach the basics of networking
 
 Now with Slack, TravisCI and Heroku integration.
