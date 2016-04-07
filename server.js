@@ -23,14 +23,18 @@ app.set('view engine', 'jade');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  const reactHTML = ReactDOMServer.renderToString(<Index url = {url}/>);
-  res.render('index', { reactHTML });
+  res.render('index');
 });
 
 io.on('connection', (socket) => {
+  io.emit('user:online', Object.keys(io.sockets.connected).length);
 
   socket.on('message:sent', (message) => {
     io.emit('message:get', message);
+  });
+
+  socket.on('disconnect', () => {
+    io.emit('user:offline', Object.keys(io.sockets.connected).length);
   });
 
 });
