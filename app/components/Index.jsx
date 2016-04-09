@@ -10,7 +10,8 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = { online: 0 };
-    socket = io.connect(props.url);
+
+    socket = this.props.socket;
 
     socket.on('user:online', (numOnline) => {
       this.setState({ online: numOnline });

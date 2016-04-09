@@ -16,7 +16,11 @@ class ChatList extends Component {
   render() {
 
     let messageDivs = this.state.messages.map((message) => {
-      return (<div className = "message">{message}</div>);
+      return (
+        <div key = {Math.floor(Math.random() * 1000)} className = "message">
+          {message}
+        </div>
+      );
     });
 
     return (
