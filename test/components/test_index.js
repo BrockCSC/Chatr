@@ -18,7 +18,7 @@ describe('Index', function () {
   const client2 = io.connect(url, options);
 
   beforeEach(function () {
-    component = renderComponent(Index, { url });
+    component = renderComponent(Index, { socket: client1 });
   });
 
   it('should render on the page', () => {
