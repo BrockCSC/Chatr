@@ -21,6 +21,7 @@ Note, (...) means it's a directory.
 ├── node_modules (...) --> dependencies
 ├── package.json
 ├── public (...)
+	└── css (...) --> folder containing stylesheets
 │   └── main.js --> bundled file
 ├── server.js --> app entry point, launches express server.
 ├── test --> folder containing tests and test helper engine
@@ -31,4 +32,4 @@ Note, (...) means it's a directory.
 
 # [Demo](http://brockcsc-chatr.herokuapp.com/)
 
-## Wiki detailing stack, tutorials, tools and how to contribute coming soon!
+## Please visit our [Wiki](https://github.com/BrockCSC/Chatr/wiki) for information on the stack, and how to contribute!
