@@ -4,9 +4,6 @@ var browserify = require('browserify');
 var babelify   = require('babelify');
 var source     = require('vinyl-source-stream');
 var buffer     = require('vinyl-buffer');
-
-//TODO: Add uglify.
-// var uglify     = require('gulp-uglify');
 var size       = require('gulp-size');
 
 gulp.task('scripts', function () {
@@ -20,8 +17,6 @@ gulp.task('scripts', function () {
   bundler.bundle()
       .pipe(source('main.js'))
       .pipe(buffer())
-
-      // .pipe(uglify())
       .pipe(gulp.dest('./public/'));
 });
 

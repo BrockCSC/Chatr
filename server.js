@@ -3,13 +3,6 @@ const app = exports.app =  express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-//React
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-
-//Component
-const Index = require('./app/components/Index.jsx').default;
-
 //Environment variables and paths
 const port = process.env.PORT || 3000;
 const url = process.env.URL || `http://localhost:${port}`;
@@ -20,7 +13,7 @@ app.set('port', port);
 app.set('views', viewsPath);
 app.set('view engine', 'jade');
 
-app.use(express.static('public'));
+app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res) => {
   res.render('index');
